@@ -54,14 +54,14 @@ Helper classes that are not in the proposal list: `RoomInfo` (reads data/rooms.t
 ## UML check
 | UML class | Attributes in the UML | In the code |
 |---|---|
-CrewMember | name, description, strength, usage, puzzleTime | all present (name and strength come from Character) 
-Mission | status, failureReason | `status`, `failureReason`, `isWon()`, `isLost()` 
-Mansion | name | `name` 
-Artifact | name, floorNumber | `name`, `floorNumber` 
-Floor | floorNumber | `floorNumber` 
-Room | roomNumber, isCleared | `roomNumber`, `cleared` with `isCleared()` 
-Guard | name, strength | `name` (from Character), `strength` 
-Puzzle | question, answer, timeLimit | not yet (feature 7) 
+CrewMember | name, description, strength, usage, puzzleTime | all present (name and strength come from Character) |
+Mission | status, failureReason | `status`, `failureReason`, `isWon()`, `isLost()` |
+Mansion | name | `name` |
+Artifact | name, floorNumber | `name`, `floorNumber` |
+Floor | floorNumber | `floorNumber` |
+Room | roomNumber, isCleared | `roomNumber`, `cleared` with `isCleared()` |
+Guard | name, strength | `name` (from Character), `strength` |
+Puzzle | question, answer, timeLimit | not yet (feature 7) |
 
 
 | UML relationship | Where it is in the code |
