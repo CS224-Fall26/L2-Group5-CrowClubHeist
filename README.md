@@ -1,4 +1,3 @@
-# L2-Group5-CrowClubHeist
 # The Crow Club Heist (C++ / SFML 2.6)
 
 ## Folder layout
@@ -35,7 +34,7 @@ You lose when nobody with usage left can act.
 
 ## Features (same list as the proposal)
 | # | Feature | Classes (from the proposal) | Member | Status |
-
+|---|---|---|---|---|
 | 1 | Welcome menu and screen navigation | Game, Screen, MenuScreen | Zunaira | done (menu: New Mission, View Crew, Kaz's Intel, How to Play, Exit) |
 | 2 | Choose a crew member | CrewSelectScreen, CrewMember, Character | Ayna | done |
 | 3 | Kaz's intel and artifact choice | IntelScreen, Artifact, Mission | Ayna | done |
@@ -65,40 +64,30 @@ Guard | name, strength | `name` (from Character), `strength`
 Puzzle | question, answer, timeLimit | not yet (feature 7) 
 
 
-|           UML relationship                   |                       Where it is in the code 
+| UML relationship | Where it is in the code |
 
-Mission uses 6 CrewMember (aggregation)        | `Mission::crew` (pointers; the crew is owned and deleted by Game) 
-Mission takes place in 1 Mansion (composition) | `Mission::mansion` (created with `new`, deleted in `~Mission`) 
-Mission targets 1 Artifact (association)       | `Mission::target` 
-Mansion contains 3 Artifacts (aggregation)     | `Mansion::artifacts` (pointers; not deleted by the mansion) 
-Mansion has 3 Floors (composition)             | `Mansion::floors` (deleted in `~Mansion`) 
-Floor has 3 Rooms (composition)                | `Floor::head`, a linked list through `Room::nextRoom` (deleted in `~Floor`) 
-Room guarded by 1..2 Guards (composition)      | `GuardRoom::guards` (deleted in `~GuardRoom`) 
-Room holds 0..1 Artifact (association)         | `PuzzleRoom::artifact` (only the vault holds one) 
-Room locked by 0..1 Puzzle (composition)       | not yet (feature 7) 
+| Mission uses 6 CrewMember (aggregation) | `Mission::crew` (pointers; the crew is owned and deleted by Game) |
+| Mission takes place in 1 Mansion (composition) | `Mission::mansion` (created with `new`, deleted in `~Mission`) |
+| Mission targets 1 Artifact (association) | `Mission::target` |
+| Mansion contains 3 Artifacts (aggregation) | `Mansion::artifacts` (pointers; not deleted by the mansion) |
+| Mansion has 3 Floors (composition) | `Mansion::floors` (deleted in `~Mansion`) |
+| Floor has 3 Rooms (composition) | `Floor::head`, a linked list through `Room::nextRoom` (deleted in `~Floor`) |
+| Room guarded by 1..2 Guards (composition) | `GuardRoom::guards` (deleted in `~GuardRoom`) |
+| Room holds 0..1 Artifact (association) | `PuzzleRoom::artifact` (only the vault holds one) |
+| Room locked by 0..1 Puzzle (composition) | not yet (feature 7) |
 
 ## Classes
-Class 
-  | Job |
-
-Game 
-  |window, main loop, owns crew, artifacts, mission, current screen |
-Screen (abstract) + MenuScreen, HowToPlayScreen, IntelScreen, CrewSelectScreen, PlayScreen, ResultScreen
-  |the screens |
-Character -> CrewMember, Guard 
-  |people in the rooms |
-Artifact 
-  |the treasures |
-Room -> GuardRoom -> PuzzleRoom   
-  |the rooms (PuzzleRoom = vault) |
-Floor, Mansion 
-  |3 rooms per floor (linked list), 3 floors |
-Mission 
-  |one run: crew, mansion, target, status, active crew member, current room |
-RoomInfo 
-  |facts about a room, read from data/rooms.txt |
-UI 
-  |helper functions that draw text and boxes |
+| Class | Job |
+|---|---|
+| Game | window, main loop, owns crew, artifacts, mission, current screen |
+| Screen (abstract) + MenuScreen, HowToPlayScreen, IntelScreen, CrewSelectScreen, PlayScreen, ResultScreen | the screens |
+| Character -> CrewMember, Guard | people in the rooms |
+| Artifact | the treasures |
+| Room -> GuardRoom -> PuzzleRoom | the rooms (PuzzleRoom = vault) |
+| Floor, Mansion | 3 rooms per floor (linked list), 3 floors |
+| Mission | one run: crew, mansion, target, status, active crew member, current room |
+| RoomInfo | facts about a room, read from data/rooms.txt |
+| UI | helper functions that draw text and boxes |
 
 ## OOP map
 - **Inheritance + virtual:** `Character` <- `CrewMember`, `Guard` (`draw` is overridden in `Guard`); `Room` <- `GuardRoom` <- `PuzzleRoom`; `Screen` <- 6 screens.
