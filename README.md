@@ -53,7 +53,7 @@ Helper classes that are not in the proposal list: `RoomInfo` (reads data/rooms.t
 
 ## UML check
 | UML class | Attributes in the UML | In the code |
-
+|---|---|
 CrewMember | name, description, strength, usage, puzzleTime | all present (name and strength come from Character) 
 Mission | status, failureReason | `status`, `failureReason`, `isWon()`, `isLost()` 
 Mansion | name | `name` 
@@ -65,7 +65,7 @@ Puzzle | question, answer, timeLimit | not yet (feature 7)
 
 
 | UML relationship | Where it is in the code |
-
+|---|---|
 | Mission uses 6 CrewMember (aggregation) | `Mission::crew` (pointers; the crew is owned and deleted by Game) |
 | Mission takes place in 1 Mansion (composition) | `Mission::mansion` (created with `new`, deleted in `~Mission`) |
 | Mission targets 1 Artifact (association) | `Mission::target` |
