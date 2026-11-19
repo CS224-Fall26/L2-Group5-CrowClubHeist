@@ -1,0 +1,124 @@
+# rooms.txt - one block per room. All numbers are in pixels of the room picture.
+# room <name> <picture file> <width> <height>     (use _ instead of spaces in the name)
+# wall <x> <y> <width> <height>     a rectangle the crew cannot walk through (walls, furniture)
+# door <x> <y> <width> <height>     walking into it takes the crew to the next room
+# spawn <x> <y>                     where the crew appears when the room is entered
+# guard <x> <y>                     a place where a guard may stand
+# pedestal <x> <y>                  where the artifact sits if this room is a vault
+# fire <x> <y> <width> <height>     where the animated fire is drawn
+# end                               finishes the room
+
+room Kitchen rooms/kitchen.png 288 202
+wall 0 0 288 84
+wall 4 134 136 68
+wall 260 142 28 58
+door 0 112 10 28
+spawn 240 95
+guard 150 104
+guard 75 104
+pedestal 200 110
+end
+
+room Parlour rooms/parlour.png 288 264
+wall 0 0 288 60
+wall 89 47 107 42
+wall 3 50 25 30
+wall 257 50 26 30
+wall 1 135 28 68
+wall 256 182 32 66
+wall 60 244 165 20
+door 272 116 16 32
+spawn 60 105
+guard 120 150
+guard 190 120
+pedestal 150 170
+end
+
+room Great_Hall rooms/hall.png 288 458
+wall 0 0 288 86
+wall 0 68 28 117
+wall 258 152 30 73
+wall 4 166 164 80
+wall 60 102 26 66
+wall 201 102 24 66
+wall 86 150 29 33
+wall 59 266 55 42
+wall 31 265 25 35
+wall 4 302 24 123
+wall 145 302 24 123
+wall 60 332 53 63
+wall 60 422 53 28
+wall 30 387 26 53
+wall 115 387 26 53
+wall 256 285 32 105
+wall 258 407 27 51
+wall 0 425 28 33
+door 272 112 16 30
+spawn 205 420
+guard 130 118
+guard 205 330
+pedestal 130 250
+fire 126 58 35 22
+end
+
+room Bedroom rooms/bedroom.png 288 322
+wall 0 0 288 60
+wall 172 50 26 28
+wall 202 42 28 36
+wall 230 35 58 81
+wall 257 140 31 60
+wall 259 202 26 28
+wall 1 186 27 136
+wall 57 157 57 43
+wall 60 210 53 53
+wall 145 225 24 58
+wall 172 232 111 53
+wall 31 289 109 33
+wall 145 290 25 32
+wall 257 277 28 45
+door 0 118 10 28
+spawn 200 150
+guard 60 125
+guard 190 200
+pedestal 110 105
+end
+
+room Study_Vault rooms/study.png 260 204
+wall 0 0 260 62
+wall 4 15 51 60
+wall 59 25 29 53
+wall 172 25 28 53
+wall 202 31 58 47
+wall 230 88 30 112
+wall 2 135 28 63
+spawn 125 175
+guard 70 110
+guard 190 120
+pedestal 130 92
+end
+
+room Lobby_Vault rooms/lobby.png 504 394
+wall 0 0 504 60
+wall 90 25 28 58
+wall 62 45 26 38
+wall 2 78 56 65
+wall 121 40 259 109
+wall 385 25 25 58
+wall 415 45 25 38
+wall 445 78 55 65
+wall 0 182 30 143
+wall 32 270 113 58
+wall 472 182 32 78
+wall 475 245 25 43
+wall 177 347 31 47
+wall 295 347 30 47
+wall 0 328 59 66
+wall 444 328 60 66
+wall 59 365 167 29
+wall 278 365 166 29
+door 226 376 52 18
+spawn 252 172
+guard 150 230
+guard 350 230
+pedestal 252 225
+end
